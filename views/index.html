@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Timestamp Microservice API</title>
+    <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link href="style.css" rel="stylesheet" type="text/css">
+</head>
+<body>
+  <nav id="navbar">
+    <header><i class="fa fa-clock-o" aria-hidden="true"></i>Timestamp Microservice</header>
+    <ul>
+      <a href="#intro" class="nav-link">
+          <li>Introduction</li>
+      </a>
+      <a href="#overview" class="nav-link">
+        <li>Overview</li>
+    </a>
+      <a href="#usage" class="nav-link">
+        <li>Usage</li>
+    </a>
+  </ul>
+  </nav>
+  <main id="main-doc">
+    <section class="main-section">
+        <div class="title" id="intro">Introduction</div>
+        <p class="desc">Based on a challenge of <strong>Free Code Camp's:</strong>
+        <a href="https://curse-arrow.glitch.me/" target="_blank">API Project - Time Stamp Microservice.</a>
+        </p>
+        <ul>
+          <li>API requires ISO-8601 compliant date string (e.g. <strong>"2018-09-12"</strong>) and returns JSON in following format:</li>
+        </ul>
+        <code>{"unix": 1536736210866,"utc":"Wed, 12 Sep 2018 07:10:10 GMT"}</code>
+
+        <div class="title" id="overview">Overview</div>
+        <ul class="user-stories">
+          
+          <li>The API endpoint is <code>GET /api/timestamp/:date_string?</code> e.g. <code>GET /api/timestamp/2018-09-12</code></li>
+          
+          <li>If the date string is <strong>empty</strong> API returns current timestamp. <code>GET /api/timestamp/</code></li>
+
+          <li>If the date string is <strong>valid</strong> the api returns a JSON having the structure<br><code>{"unix": &lt;timestamp&gt;, "utc" : &lt;date&gt; }</code><br>
+            e.g. <code>{"unix": 1536736210866,"utc":"Wed, 12 Sep 2018 07:10:10 GMT"}</code></li>
+          <li>If the date string is <strong>invalid</strong> the api returns a JSON having the structure <br>
+              <code>{"error" : "Invalid Date" }</code>.
+          </li>
+        </ul>
+
+        <div class="title" id="usage">Usage</div>
+        <h3>Example Usage:</h3>
+        <ul>
+          <li><a href="https://timestampjson.glitch.me/api/timestamp/2018-09-12" target="_blank">
+            https://timestampjson.glitch.me/api/timestamp/2018-09-12</a></li>
+          <li><a href="https://timestampjson.glitch.me/api/timestamp/1536736210866" target="_blank">https://timestampjson.glitch.me/api/timestamp/2018-09-12</a></li>
+        </ul>
+
+        <h3>Example Output:</h3>
+        <p>
+          <code>{"unix": 1536736210866, "utc": "Wed, 12 Sep 2018 07:10:10 GMT"}</code>
+        </p>
+    </section>
+  </main>
+  <div class="the-guy">
+    by <a href="https://github.com/farhankk360" target="_blank">Farhan Ullah</a>
+</div>
+</body>
+</html>
